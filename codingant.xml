@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<repositories encoding="UTF-8" version="1.1">
+  <repo priority="50" quality="experimental">
+    <name>codingant</name>
+    <description>Coding Ant</description>
+    <homepage>https://github.com/everpcpc/codingant</homepage>
+    <owner>
+      <email>gentoo@everpcpc.com</email>
+      <name>everpcpc</name>
+    </owner>
+    <source type="git">https://github.com/everpcpc/codingant.git</source>
+  </repo>
+</repositories>
