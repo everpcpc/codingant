@@ -34,6 +34,6 @@ src_compile() {
 }
 
 src_install() {
-	dobin ${PN}
+	dobin bin/${PN}
 }
 
