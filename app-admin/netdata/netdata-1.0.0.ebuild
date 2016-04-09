@@ -43,14 +43,14 @@ pkg_postinst() {
 			then
 			echo >&2 "Creating directory '${x}'"
 			mkdir -p "${x}" || exit 1
-			chown -R netdata:netdata "${x}"
-			chmod 0775 "${x}"
 		fi
+		chown -R netdata:netdata "${x}"
+		chmod 0775 "${x}"
 	done
 
 	# fix apps.plugin to be setuid to root
-	chown root "${NETDATA_PREFIX}/usr/libexec/netdata/plugins.d/apps.plugin"
-	chmod 4755 "${NETDATA_PREFIX}/usr/libexec/netdata/plugins.d/apps.plugin"
+	chown root "/usr/libexec/netdata/plugins.d/apps.plugin"
+	chmod 4755 "/usr/libexec/netdata/plugins.d/apps.plugin"
 
 	# create an empty config if it does not exist
 	[ ! -f "/etc/netdata/netdata.conf" ] && touch "/etc/netdata/netdata.conf"
