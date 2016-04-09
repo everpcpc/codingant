@@ -30,7 +30,7 @@ src_configure() {
 
 pkg_postinst() {
 	enewgroup netdata
-	enewuser netdata -l /sbin/nologin -l "netdata"
+	enewuser netdata -1 /sbin/nologin -1 "netdata"
 
 	# prepare the directories
 	NETDATA_CACHE_DIR="/var/cache/netdata"
