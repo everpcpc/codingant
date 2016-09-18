@@ -18,8 +18,8 @@ LICENSE="BSD"
 KEYWORDS="amd64"
 IUSE=""
 
-DEPEND="${DEPEND}"
-RDEPEND=""
+DEPEND=">=dev-lang/go-1.7"
+RDEPEND="${DEPEND}"
 
 src_compile() {
 	debug-print-function ${FUNCNAME} "$@"
