@@ -18,13 +18,16 @@ LICENSE="MIT"
 SLOT="0"
 IUSE=""
 
-DEPEND="dev-go/dep"
+DEPEND="
+	dev-go/dep
+	dev-vcs/mercurial
+"
 RDEPEND=""
 
 src_compile() {
 	cd src/${EGO_PN}
-	GOPATH=${S} dep ensure
-	GOPATH=${S} go install -ldflags "-X main.BuildVersion=${PV}"
+	GOPATH=${S} dep ensure || die
+	GOPATH=${S} go install -ldflags "-X main.BuildVersion=${PV}" || die
 }
 
 src_install() {
