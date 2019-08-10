@@ -8,7 +8,7 @@ inherit eutils
 DESCRIPTION="Building blocks for developing proxy servers in golang."
 HOMEPAGE="https://www.v2ray.com"
 SRC_URI="https://github.com/v2ray/v2ray-core/releases/download/v${PV}/v2ray-linux-64.zip -> ${P}.zip"
-S="${WORKDIR}/${PN}-v${PV}-linux-64"
+S="${WORKDIR}"
 
 LICENSE="MIT"
 SLOT="0"
