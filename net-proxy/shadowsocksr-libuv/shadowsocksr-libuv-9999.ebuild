@@ -9,7 +9,6 @@ DESCRIPTION="ShadowsocksR (SSR) native implementation for all platforms powered 
 HOMEPAGE="https://github.com/ShadowsocksR-Live/shadowsocksr-native"
 
 EGIT_REPO_URI="https://github.com/ShadowsocksR-Live/shadowsocksr-native.git"
-KEYWORDS="~amd64 ~x86"
 
 LICENSE="GPL-3.0"
 SLOT="0"
