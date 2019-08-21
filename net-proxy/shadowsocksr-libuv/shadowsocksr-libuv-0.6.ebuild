@@ -20,5 +20,5 @@ BDEPEND=""
 S="${WORKDIR}"
 
 src_install() {
-	dobin ssr-{client,local,server} || die
+	dobin ssr-* || die
 }
