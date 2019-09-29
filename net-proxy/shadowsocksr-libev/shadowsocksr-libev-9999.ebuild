@@ -13,6 +13,7 @@ EGIT_REPO_URI="https://github.com/shadowsocksr-backup/shadowsocksr-libev"
 LICENSE="GPL-3.0"
 SLOT="0"
 IUSE=""
+KEYWORD="~amd64"
 
 DEPEND=""
 RDEPEND="${DEPEND}"
