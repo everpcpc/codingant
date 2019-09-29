@@ -29,5 +29,5 @@ CFLAGS="${CFLAGS} -Wno-error=format-overflow -Wno-error=sizeof-pointer-memaccess
 src_install() {
 	newbin src/ss-local ssr-local
 	newbin src/ss-nat ssr-nat
-	newbin ssc/ss-redir ssr-redir
+	newbin src/ss-redir ssr-redir
 }
