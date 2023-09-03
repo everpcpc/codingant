@@ -6,9 +6,8 @@ EAPI=8
 inherit systemd rpm
 
 DESCRIPTION="HPE Agentless Management Service (Gen9 and earlier)"
-HOMEPAGE="https://support.hpe.com/connect/s/softwaredetails?softwareId=MTX_f352c7ceaea841829afdd65f22"
-SRC_URI="https://downloads.hpe.com/pub/softlib2/software1/pubsw-linux/p922329456/v195164/hp-ams-2.10.4-885.5.rhel8.x86_64.rpm"
-# SRC_URI="https://downloads.hpe.com/pub/softlib2/software1/pubsw-linux/p904411522/v206680/hp-ams-2.10.5-888.3.rhel7.x86_64.rpm"
+HOMEPAGE="https://support.hpe.com/connect/s/softwaredetails?softwareId=MTX_72130dcf18094e4ebf8378f158"
+SRC_URI="https://downloads.hpe.com/pub/softlib2/software1/pubsw-linux/p922329456/v207455/hp-ams-2.10.5-888.1.rhel8.x86_64.rpm"
 
 LICENSE="hpe"
 SLOT="0"
@@ -45,7 +44,5 @@ src_install() {
 	readonly amsHelperManPage="usr/share/man/man8/amsHelper.8"
 	gunzip "${amsHelperManPage}".gz
 	doman "${amsHelperManPage}"
-
-	dodoc opt/hp/hp-ams/hp-ams.license
 }
 
