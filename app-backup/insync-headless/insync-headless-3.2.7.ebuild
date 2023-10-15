@@ -40,6 +40,8 @@ src_install() {
 	gunzip "${D}"/usr/share/man/man1/insync-headless.1.gz
 	gunzip "${D}"/usr/share/man/man1/insync-headless-*.1.gz
 
+	dosym /etc/ssl/certs/ca-certificates.crt /etc/pki/tls/certs/ca-bundle.crt
+
 	echo "SEARCH_DIRS_MASK=\"/usr/lib*/insync\"" > "${T}/70-${PN}" || die
 	insinto "/etc/revdep-rebuild" && doins "${T}/70-${PN}" || die
 }
