@@ -3,34 +3,32 @@
 
 EAPI=7
 
-inherit rpm
+inherit unpacker
 
 DESCRIPTION="Advanced cross-platform Google Drive headless client"
 HOMEPAGE="https://www.insynchq.com/"
 
 MAGIC="10758"
-MAIN_INSTALLER_STRING="https://cdn.insynchq.com/builds/linux/insync-headless-${PV}.${MAGIC}-fc31"
+MAIN_INSTALLER_STRING="https://cdn.insynchq.com/builds/linux/insync-headless_${PV}.${MAGIC}-buster"
 
 SRC_URI="
-	amd64?    ( ${MAIN_INSTALLER_STRING}.x86_64.rpm )"
+	amd64?    ( ${MAIN_INSTALLER_STRING}_amd64.deb ) -> ${P}.deb"
+
+S="${WORKDIR}"
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="amd64 x86"
+KEYWORDS="amd64"
 IUSE=""
 
 DEPEND=""
 RDEPEND="${DEPEND}"
 BDEPEND=""
 
-PATCHES=(
-	"${FILESDIR}/lib64.patch"
-)
-
 src_unpack() {
-	rpm_src_unpack
-	mkdir -p "${S}"
-	mv "${WORKDIR}"/usr "${S}"/
+	mkdir "${S}/${P}" || die
+	cd "${S}/${P}" || die
+	unpack_deb "${DISTDIR}/${P}.deb"
 }
 
 src_install() {
