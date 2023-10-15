@@ -14,8 +14,6 @@ MAIN_INSTALLER_STRING="https://cdn.insynchq.com/builds/linux/insync-headless_${P
 SRC_URI="
 	amd64?    ( ${MAIN_INSTALLER_STRING}_amd64.deb ) -> ${P}.deb"
 
-S="${WORKDIR}"
-
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="amd64"
@@ -25,10 +23,14 @@ DEPEND=""
 RDEPEND="${DEPEND}"
 BDEPEND=""
 
+PATCHES=(
+	"${FILESDIR}/lib64.patch"
+)
+
 src_unpack() {
-	mkdir "${S}/${P}" || die
-	cd "${S}/${P}" || die
+	mkdir -p "${S}"
 	unpack_deb "${DISTDIR}/${P}.deb"
+	mv "${WORKDIR}/usr" "${S}/"
 }
 
 src_install() {
